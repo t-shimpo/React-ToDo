@@ -1,0 +1,9 @@
+.input {
+  width: 280px;
+  height: 38px;
+  margin-right: .5em;
+}
+
+.input-btn {
+  vertical-align: top;
+}
