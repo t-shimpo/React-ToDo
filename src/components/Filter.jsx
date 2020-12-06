@@ -10,16 +10,19 @@ function Filter({ value,onChange }){
 
   return (
     <div className="filter-tabs">
+      {/* eslint-disable-next-line */}
       <a
         href="#"
         onClick={handleClick.bind(null, 'ALL')}
         className={ value === 'ALL' ? 'mark font-weight-bold' : '' }
         >ALL</a>
+      {/* eslint-disable-next-line */}
       <a
         href="#"
         onClick={handleClick.bind(null, 'TODO')}
         className={ value === 'TODO' ? 'mark font-weight-bold' : '' }
         >TODO</a>
+      {/* eslint-disable-next-line */}
       <a
         href="#"
         onClick={handleClick.bind(null, 'DONE')}

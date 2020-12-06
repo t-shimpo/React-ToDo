@@ -1,12 +1,13 @@
 import React, {useState} from 'react';
 import Input from './Input'
 import Item from './Item'
+import EditItem from './EditItem'
 import Filter from './Filter'
 import '../css/Todo.css';
 
 function Todo() {
 
-  // タスクの数
+  // タスクの累計
   const [taskNum, setNum] = useState(1);
 
   // アイテム
@@ -14,11 +15,40 @@ function Todo() {
 
   //アイテムの追加
   const handleAdd = text => {
-    setItems([...items, { key: taskNum, text, done: false, editting: false }]);
+    console.log(taskNum);
+    const newItem = {
+      id: taskNum,
+      text,
+      done: false,
+      editting: false
+    }
+    const newItems = [...items, newItem];
+    setItems(newItems);
     setNum(taskNum + 1);
   };
 
-  // アイテムの編集
+  // アイテムの編集状態の切替
+  const handleClickEditOrCancel = clicked => {
+    const newItems = items.map(item => {
+      if (item.key === clicked.key) {
+        item.editting = !item.editting;
+      }
+      return item;
+    });
+    setItems(newItems);
+  }
+
+  // アイテムの更新
+  const handleClickUpdate = (clicked, newText) => {
+    const newItems = items.map(item => {
+      if (item.key === clicked.key) {
+        item.text = newText;
+        item.editting = !item.editting;
+      }
+      return item;
+    });
+    setItems(newItems);
+  }
 
   // アイテムの削除
   const handleClickDelete = deleteKey => {
@@ -55,7 +85,7 @@ function Todo() {
       <h1 className="heading">
         ToDo管理
       </h1>
-      <Input onAdd={handleAdd} />
+      <Input onAdd={handleAdd}/>
       <Filter
         onChange={handleFilterChange}
         value={filter}
@@ -65,12 +95,25 @@ function Todo() {
       </div>
       <ul>
         {displayItems.map(item => (
-          <Item
-            key={item.key}
-            item={item}
-            onCheck={handleCheck}
-            onDelete={handleClickDelete}
+          <>
+            {item.editting ? (
+            <EditItem
+              key={item.id}
+              text={item.text}
+              item={item}
+              onChange={handleClickEditOrCancel}
+              onUpdate={handleClickUpdate}
             />
+            ) : (
+            <Item
+              key={item.id}
+              item={item}
+              onCheck={handleCheck}
+              onDelete={handleClickDelete}
+              onEdit={handleClickEditOrCancel}
+            />
+            )}
+          </>
         ))}
       </ul>
     </div>
