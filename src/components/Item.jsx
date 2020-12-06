@@ -1,13 +1,17 @@
 import React from 'react';
 import '../css/Item.css';
 
-function Item({ item,onCheck,onDelete }) {
+function Item({ item,onCheck,onDelete,onEdit }) {
   const handleChange = () => {
     onCheck(item);
   };
 
   const handleClickDelete = () => {
     onDelete(item.key);
+  }
+
+  const handleClickEdit = () => {
+    onEdit(item);
   }
 
   return (
@@ -25,6 +29,7 @@ function Item({ item,onCheck,onDelete }) {
       <div className="item-right col-12 col-md-3 col-sm-4">
         <button
           className="btn btn-info"
+          onClick={handleClickEdit}
           >編集</button>
         <button
           className="btn btn-dark"
