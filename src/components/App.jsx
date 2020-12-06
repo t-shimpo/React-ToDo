@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
-import Input from './Input'
-import '../css/App.css';
+import Todo from './Todo'
 
 class App extends Component {
   render() {
     return (
       <div className="App container text-center">
-        <h1>Todoリスト</h1>
-        <Input />
+        <Todo />
       </div>
     )
   }

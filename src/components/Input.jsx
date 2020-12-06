@@ -1,17 +1,37 @@
-import React from 'react';
+import React, {useState} from 'react';
 import '../css/Input.css';
 
-const Input = (props) => {
+
+function Input({onAdd}){
+  const [text, setText] = useState('');
+
+  const handleChange = e => setText(e.target.value);
+
+  // Enter押下時の処理
+  const handleKeyDown = e => {
+    const title = e.target.value;
+    if (e.key === 'Enter') {
+      if (!title) {
+        alert("タスクを入力してください");
+        return;
+      }
+      onAdd(text);
+      setText('');
+    }
+  }
+
   return (
-    <form className="form text-center">
-        <input
-          type="text"
-          className="input"
-          placeholder="新しいタスク"
-        />
-        <button type="button" className="input-btn btn btn-secondary">追加</button>
-    </form>
-  );
-};
+    <div>
+      <input
+        type="text"
+        className="input"
+        placeholder="タスクを入力して Enter"
+        value={text}
+        onChange={handleChange}
+        onKeyPress={handleKeyDown}
+      />
+    </div>
+  )
+}
 
 export default Input
