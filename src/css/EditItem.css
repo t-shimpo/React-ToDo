@@ -1,0 +1,15 @@
+.edit-input {
+  font-size: 18px;
+  width: 250px;
+}
+
+.edit>.item-left {
+  padding: 0 0 6px;
+}
+
+@media (max-width: 576px) {
+  .edit-input {
+    font-size: 15px;
+    width: 250px;
+  }
+}

@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-// import '../css/Input.css';
+import '../css/EditItem.css';
 
 function EditItem({item, onChange, onUpdate}){
   const [text, setText] = useState(item.text);
@@ -20,23 +20,28 @@ function EditItem({item, onChange, onUpdate}){
   }
 
   return (
-    <div>
-      <input
-        type="text"
-        className="edit-input"
-        value={text}
-        onChange={handleChange}
-        autoFocus
-      />
-      <button
-          className="btn btn-info"
-          onClick={handleClickCancel}
-          >キャンセル</button>
+    <li className="edit">
+      <div className="item-left col-12 col-md-7 col-sm-6">
+        <input
+          type="text"
+          className="edit-input"
+          value={text}
+          onChange={handleChange}
+          autoFocus
+        />
+      </div>
+      <div  className="item-right col-12 col-md-5 col-sm-6">
         <button
-          className="btn btn-dark"
-          onClick={handleClickUpdate}
-          >更新</button>
-    </div>
+            className="btn btn-secondary"
+            onClick={handleClickCancel}
+            >キャンセル</button>
+          <button
+            className="btn btn-success"
+            onClick={handleClickUpdate}
+            >更新</button>
+      </div>
+      <hr/>
+    </li>
   )
 }
 
