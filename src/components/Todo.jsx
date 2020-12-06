@@ -15,7 +15,6 @@ function Todo() {
 
   //アイテムの追加
   const handleAdd = text => {
-    console.log(taskNum);
     const newItem = {
       id: taskNum,
       text,
@@ -95,10 +94,9 @@ function Todo() {
       </div>
       <ul>
         {displayItems.map(item => (
-          <>
+          <React.Fragment key={item.id}>
             {item.editting ? (
             <EditItem
-              key={item.id}
               text={item.text}
               item={item}
               onChange={handleClickEditOrCancel}
@@ -106,14 +104,13 @@ function Todo() {
             />
             ) : (
             <Item
-              key={item.id}
               item={item}
               onCheck={handleCheck}
               onDelete={handleClickDelete}
               onEdit={handleClickEditOrCancel}
             />
             )}
-          </>
+          </React.Fragment>
         ))}
       </ul>
     </div>

@@ -32,24 +32,22 @@ li>.item-right {
   text-align: right;
 }
 
-li>.item-right>.btn {
-  /* float: right; */
-}
-
 @media (max-width: 576px) {
   li {
     margin: 10px 0; 
+  }
+  li span {
+    font-size: 16px;
   }
   li .btn {
     padding: 4px 8px;
     font-size: 14px;
   }
   li>.item-left {
-    padding: 0 0 6px;
+    padding: 0 0 10px;
   }
   li>.item-right {
     text-align: right;
     padding-right: 10px;
   }
-
 }
