@@ -9,8 +9,8 @@ Reactで作成したToDoアプリです。
 $ git clone https://github.com/t-shimpo/React-ToDo.git
 ```
 
-パッケージをインストールする
- ※node.jsとnpmが必要ですので、ない場合はあらかじめインストールしてください
+パッケージをインストールする  
+※node.jsとnpmが必要ですので、ない場合はあらかじめインストールしてください
 ```
 $ npm install
 ```
