@@ -1,5 +1,9 @@
 .heading {
-  margin: 1.5em 0 1em;
+  margin: 1.5em 0 1.2em;
+  font-family: "MS Pゴシック";
+  font-weight: 600;
+  letter-spacing: .03em;
+  color: #193B46;
 }
 
 ul,.item-number {
@@ -20,4 +24,15 @@ ul {
   color: rgb(97, 97, 97);
   padding-left: 12px;
   margin: 1.8em auto 0;
+}
+
+hr {
+  background-color: #D6CCC3;
+}
+
+@media (max-width: 576px) {
+  .heading {
+    font-size: 32px;
+    margin: 1em 0 .6em;
+  }
 }
