@@ -1,5 +1,6 @@
 .edit-input {
   font-size: 18px;
+  padding-left: 6px;
   width: 250px;
 }
 
@@ -10,6 +11,7 @@
 @media (max-width: 576px) {
   .edit-input {
     font-size: 15px;
+    padding-left: 4px;
     width: 250px;
   }
 }

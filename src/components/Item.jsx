@@ -7,7 +7,7 @@ function Item({ item,onCheck,onDelete,onEdit }) {
   };
 
   const handleClickDelete = () => {
-    onDelete(item.key);
+    onDelete(item.id);
   }
 
   const handleClickEdit = () => {

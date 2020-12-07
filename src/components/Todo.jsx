@@ -29,7 +29,7 @@ function Todo() {
   // アイテムの編集状態の切替
   const handleClickEditOrCancel = clicked => {
     const newItems = items.map(item => {
-      if (item.key === clicked.key) {
+      if (item.id === clicked.id) {
         item.editting = !item.editting;
       }
       return item;
@@ -40,7 +40,7 @@ function Todo() {
   // アイテムの更新
   const handleClickUpdate = (clicked, newText) => {
     const newItems = items.map(item => {
-      if (item.key === clicked.key) {
+      if (item.id === clicked.id) {
         item.text = newText;
         item.editting = !item.editting;
       }
@@ -50,15 +50,15 @@ function Todo() {
   }
 
   // アイテムの削除
-  const handleClickDelete = deleteKey => {
-    const newItems = items.filter(item => item.key !== deleteKey);
+  const handleClickDelete = deleteId => {
+    const newItems = items.filter(item => item.id !== deleteId);
     setItems(newItems);
   }
 
   // チェックボックスのOn/Offの処理
   const handleCheck = checked => {
     const newItems = items.map(item => {
-      if (item.key === checked.key) {
+      if (item.id === checked.id) {
         item.done = !item.done;
       }
       return item;
@@ -79,6 +79,11 @@ function Todo() {
     if (filter === 'DONE') return item.done;
   });
 
+  // 未完了アイテム
+  const todoItems = items.filter(item => item.done === false);
+  // 完了アイテム
+  const doneItems = items.filter(item => item.done === true);
+
   return (
     <div className="panel">
       <h1 className="heading">
@@ -86,12 +91,15 @@ function Todo() {
       </h1>
       <Input onAdd={handleAdd}/>
       <Filter
-        onChange={handleFilterChange}
         value={filter}
+        onChange={handleFilterChange}
+        itemsNum={items.length}
+        todoItemsNum={todoItems.length}
+        doneItemsNum={doneItems.length}
       />
-      <div className="item-number">
+      {/* <div className="item-number">
         全 {displayItems.length} 件
-      </div>
+      </div> */}
       <ul>
         {displayItems.map(item => (
           <React.Fragment key={item.id}>
