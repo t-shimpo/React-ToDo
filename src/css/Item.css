@@ -2,8 +2,12 @@ li {
   margin: 15px 0; 
 }
 
-li input {
-  margin-right: 8px;
+li .check {
+  margin-top: 1px;
+  margin-right: 11px;
+  transform: scale(1.45);
+  vertical-align: text-top;
+  cursor: pointer;
 }
 
 li span {
@@ -49,5 +53,13 @@ li>.item-right {
   li>.item-right {
     text-align: right;
     padding-right: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  li .check {
+    margin-right: 9px;
+    margin-top: 2px;
+    transform: scale(1.3);
   }
 }

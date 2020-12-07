@@ -18,11 +18,13 @@ function Item({ item,onCheck,onDelete,onEdit }) {
     <li>
       <div className="item-left col-12 col-md-9 col-sm-8">
         <input
+          className="check"
           type="checkbox"
           checked={item.done}
           onChange={handleChange}
           />
-        <span className={item.done ? 'text-secondary item-done' : ''}>
+        <span
+          className={item.done ? 'text-secondary item-done' : ''}>
           {item.text}
         </span>
       </div>
