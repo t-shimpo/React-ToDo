@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import '../css/Input.css';
 
-
 function Input({onAdd}){
   const [text, setText] = useState('');
 

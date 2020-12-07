@@ -1,6 +1,7 @@
 .input {
   width: 280px;
   height: 38px;
+  padding-left: 6px;
   margin-right: .5em;
   margin-bottom: 2em;
 }
