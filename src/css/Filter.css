@@ -1,5 +1,5 @@
 .filter-tabs {
-  margin-bottom: 2.3em;
+  margin-bottom: 2.5em;
 }
 
 .filter-tabs a {
@@ -8,7 +8,8 @@
   padding: 5px 3px 4px 5px;
   letter-spacing: .05em;
   text-decoration: none;
-  color: #DD8F77;
+  color: #8fa3ad;
+  font-weight: 600;
 }
 
 .filter-tabs a span {
@@ -17,8 +18,7 @@
 }
 
 .filter-tabs .current-tab {
-  color: #DD8F77;
-  font-weight: bold;
+  color: #e47756;
   border-bottom: 3px solid #193B46;
 }
 

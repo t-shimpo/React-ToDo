@@ -6,6 +6,11 @@
   margin-right: .5em;
   margin-bottom: 1.8em;
   color: #333;
+  border: 1px solid #193B46;
+  border-radius: 5px;
+}
+.input::placeholder {
+  color: #9BA9B0;
 }
 
 .input-btn {

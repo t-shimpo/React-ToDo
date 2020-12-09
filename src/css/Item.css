@@ -3,8 +3,7 @@ li {
 }
 
 li .check {
-  margin-top: 1px;
-  margin-right: 11px;
+  margin: 2px 11px 0px 2px;
   transform: scale(1.45);
   vertical-align: text-top;
   cursor: pointer;
@@ -28,11 +27,11 @@ li>.item-left, li>.item-right {
 }
 
 li>.item-left {
-  padding: 0 0 10px;
+  padding: 5px 0 10px;
 }
 
 li>.item-right {
-  padding-right: 10px;
+  padding-right: 3px;
   text-align: right;
 }
 
