@@ -1,5 +1,5 @@
 .heading {
-  margin: 1.5em 0 1.2em;
+  margin: 1.5em 0 1em;
   font-family: "MS Pゴシック";
   font-weight: 600;
   letter-spacing: .03em;
@@ -14,7 +14,7 @@ ul,.item-number {
 
 ul {
   list-style: none;
-  padding-left: 10px;
+  padding: 0 10px;
   margin: 1.6em auto;
 }
 
@@ -27,7 +27,9 @@ ul {
 }
 
 hr {
-  background-color: #D6CCC3;
+  background-color: #d8d1cb;
+  height: 2px;
+  border: none;
 }
 
 @media (max-width: 576px) {

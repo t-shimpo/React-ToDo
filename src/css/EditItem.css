@@ -1,12 +1,14 @@
 .edit-input {
   font-size: 18px;
-  padding-left: 6px;
-  width: 250px;
+  padding: 2px 0 2px 6px;
+  width: 270px;
   color: #333;
+  border: 1px solid #193B46;
+  border-radius: 5px;
 }
 
 .edit>.item-left {
-  padding: 0 0 6px;
+  padding: 4px 0 5px;
 }
 
 @media (max-width: 576px) {
@@ -14,5 +16,8 @@
     font-size: 15px;
     padding-left: 4px;
     width: 250px;
+  }
+  .edit>.item-left {
+    padding: 0 0 6px;
   }
 }

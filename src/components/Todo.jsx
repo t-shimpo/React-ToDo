@@ -7,7 +7,7 @@ import '../css/Todo.css';
 
 function Todo() {
 
-  // タスクの累計
+  // タスクの数
   const [taskNum, setNum] = useState(1);
 
   // アイテム
@@ -97,9 +97,6 @@ function Todo() {
         todoItemsNum={todoItems.length}
         doneItemsNum={doneItems.length}
       />
-      {/* <div className="item-number">
-        全 {displayItems.length} 件
-      </div> */}
       <ul>
         {displayItems.map(item => (
           <React.Fragment key={item.id}>
